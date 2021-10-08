@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-
+import { useStore } from 'vuex';
 const routes = [
   {
     path: '/',
@@ -17,8 +17,26 @@ const routes = [
     name: 'list',
     component: () => import('../pages/list.vue'),
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../pages/login.vue'),
+  },
+  {
+    path: '/staff',
+    name: 'staff',
+    component: () => import('../pages/staff.vue'),
+  },
+  {
+    path: '/:id/edit',
+    name: 'edit',
+    component: () => import('../pages/edit.vue'),
+  },
 ];
-export default createRouter({
+
+const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+
+export default router;
